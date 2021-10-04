@@ -1,0 +1,141 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "defaultTitle",
+      "description": "defaultDescription",
+      "version": "0.1"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:5000"
+      }
+    ],
+    "paths": {
+      "/api/v1/users": {
+        "post": {
+          "description": "Auto generated using Swagger Inspector",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/v1_users_body"
+                },
+                "examples": {
+                  "0": {
+                    "value": "{\n    \"username\":\"im_gibson5\",\n    \"password\": \"written1\"\n}"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Auto generated using Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/inline_response_201"
+                  },
+                  "examples": {
+                    "0": {
+                      "value": "{\n  \"code\": \"success\", \n  \"user\": {\n    \"id\": 6, \n    \"username\": \"im_gibson5\"\n  }\n}\n"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "servers": [
+            {
+              "url": "http://localhost:5000"
+            }
+          ]
+        },
+        "servers": [
+          {
+            "url": "http://localhost:5000"
+          }
+        ]
+      },
+      "/api/v1/books": {
+        "get": {
+          "description": "Auto generated using Swagger Inspector",
+          "responses": {
+            "200": {
+              "description": "Auto generated using Swagger Inspector",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/inline_response_200"
+                  },
+                  "examples": {
+                    "0": {
+                      "value": "{\n  \"books\": [], \n  \"code\": \"success\"\n}\n"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "servers": [
+            {
+              "url": "http://localhost:5000"
+            }
+          ]
+        },
+        "servers": [
+          {
+            "url": "http://localhost:5000"
+          }
+        ]
+      }
+    },
+    "components": {
+      "schemas": {
+        "v1_users_body": {
+          "type": "object",
+          "properties": {
+            "password": {
+              "type": "string"
+            },
+            "username": {
+              "type": "string"
+            }
+          }
+        },
+        "inline_response_201": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "user": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "username": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "inline_response_200": {
+          "type": "object",
+          "properties": {
+            "books": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "code": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
