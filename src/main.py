@@ -32,6 +32,10 @@ def create_app(config):
         level=logging.DEBUG,
     )
 
+    @app.route("/")
+    def home():
+        return jsonify({"app_name": "Flask Author DB", "version": "1.0"})
+
     @app.route("/api/spec")
     def spec():
         swag = swagger(app)
@@ -42,7 +46,9 @@ def create_app(config):
 
     swaggerui_blueprint = get_swaggerui_blueprint(
         # "/api/docs", "/static/swagger.json", config={"app_name": "Flask Author DB"}
-        "/api/docs", "/api/spec", config={"app_name": "Flask Author DB"}
+        "/api/docs",
+        "/api/spec",
+        config={"app_name": "Flask Author DB"},
     )
     app.register_blueprint(author_routes, url_prefix="/api/v1/authors")
     app.register_blueprint(book_routes, url_prefix="/api/v1/books")
